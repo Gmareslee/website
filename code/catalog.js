@@ -1,4 +1,4 @@
-// --- DECAP CMS ÜRÜNLERİNİ DİNAMİK YÜKLEME VE LIGHTBOX BANTLAMA SCRİPTİ ---
+// --- DECAP CMS DİNAMİK KATALOG VE LIGHTBOX ENTEGRASYON SCRİPTİ ---
 document.addEventListener("DOMContentLoaded", async () => {
     const galleryGrid = document.querySelector(".gallery-grid");
     if (!galleryGrid) return;
@@ -75,31 +75,64 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
             `;
 
-            // Tıklama olayını doğrudan karta ve görsele bağlıyoruz
-            const mediaDiv = modelCard.querySelector('.model-media');
-            mediaDiv.addEventListener('click', () => {
-                openImageModal(imageSrc);
-            });
-
             galleryGrid.prepend(modelCard);
         }
+
+        // Tum kartlar eklendikten sonra Lightbox olaylarini bagla
+        initCustomLightbox();
 
     } catch (err) {
         console.error("Katalog çekilirken hata oluştu:", err);
     }
 });
 
-// Resim modali açma yardımcı fonksiyonu
-function openImageModal(src) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
+function initCustomLightbox() {
+    // Sayfadaki hem eski hem yeni eklenen tum resimleri al
+    const allImages = Array.from(document.querySelectorAll('.gallery-grid img'));
+    let lightbox = document.querySelector('.image-lightbox');
 
-    if (modal && modalImg) {
-        modalImg.src = src;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    } else {
-        // Eğer modal ID'si farklıysa varsayılan tıklama
-        window.open(src, '_blank');
+    // Eger HTML'de henuz lightbox yoksa script.js gibi biz olusturalim
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.className = 'image-lightbox';
+        lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Kapat">&times;</button><button class="lightbox-prev" type="button" aria-label="Önceki fotoğraf">&#10094;</button><img alt=""><button class="lightbox-next" type="button" aria-label="Sonraki fotoğraf">&#10095;</button>';
+        document.body.appendChild(lightbox);
     }
+
+    const lightboxImage = lightbox.querySelector('img');
+    let currentIndex = 0;
+
+    const showImage = (index) => {
+        currentIndex = (index + allImages.length) % allImages.length;
+        const targetImg = allImages[currentIndex];
+        if (targetImg && lightboxImage) {
+            lightboxImage.src = targetImg.src;
+            lightboxImage.alt = targetImg.alt || 'Model Resim';
+        }
+    };
+
+    const closeLightbox = () => lightbox.classList.remove('open');
+
+    // Her bir resme ve kapsayıcısına tıklama olayı bağlayalım
+    allImages.forEach((img, idx) => {
+        const cardMedia = img.closest('.model-media') || img;
+        cardMedia.onclick = (e) => {
+            e.stopPropagation();
+            showImage(idx);
+            lightbox.classList.add('open');
+        };
+    });
+
+    // Buton kontrollerini bagla
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    const nextBtn = lightbox.querySelector('.lightbox-next');
+
+    if (closeBtn) closeBtn.onclick = closeLightbox;
+    if (prevBtn) prevBtn.onclick = (e) => { e.stopPropagation(); showImage(currentIndex - 1); };
+    if (nextBtn) nextBtn.onclick = (e) => { e.stopPropagation(); showImage(currentIndex + 1); };
+
+    lightbox.onclick = (event) => {
+        if (event.target === lightbox) closeLightbox();
+    };
 }
