@@ -1,9 +1,10 @@
 backend:
-  name: git-gateway
-  branch: main # ya da master
+  name: github
+  repo: Gmareslee/website
+  branch: main
 
-media_folder: "assets/images/katalog" # Yüklenen resimlerin gideceği klasör
-public_folder: "/assets/images/katalog"
+media_folder: "images/models"
+public_folder: "images/models"
 
 collections:
   - name: "katalog"
