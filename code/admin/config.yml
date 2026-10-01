@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Gmareslee/website
   branch: main
-  base_url: https://WORKER_ISMIN.workers.dev
+  base_url: https://cold-bush-6584.maresleexd.workers.dev
   auth_endpoint: /auth
 
 media_folder: "code/images"
