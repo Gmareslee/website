@@ -15,20 +15,7 @@ collections:
       - {label: "Açıklama", name: "description", widget: "text", required: false}
       - {label: "Görsel", name: "image", widget: "image", media_folder: "code/images/models", public_folder: "/images/models"}
       
-collections:
-  - name: "models" # Artık senin koleksiyonun adı neyse
-    label: "Modeller"
-    folder: "content/models"
-    create: true
-    fields:
-      - {label: "Başlık", name: "title", widget: "string"}
-      - {label: "Açıklama", name: "description", widget: "text", required: false}
-      - label: "Görsel"
-        name: "image"
-        widget: "image"
-        media_library:
-          config:
-            max_file_size: 5120000 # İsteğe bağlı boyut sınırı
+
     # İŞTE KRİTİK KISIM BURASI:
     media_folder: ""       # Görselin proje içinde nereye kaydedileceği
     public_folder: ""      # Sitede yolun nasıl gösterileceği
