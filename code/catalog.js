@@ -1,4 +1,4 @@
-// --- DECAP CMS ÜRÜNLERİNİ DİNAMİK YÜKLEME SCRİPTİ ---
+// --- DECAP CMS ÜRÜNLERİNİ DİNAMİK YÜKLEME VE LIGHTBOX SCRIPTİ ---
 document.addEventListener("DOMContentLoaded", async () => {
     const galleryGrid = document.querySelector(".gallery-grid");
     if (!galleryGrid) return;
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             modelCard.innerHTML = `
-                <div class="model-media">
+                <div class="model-media" style="cursor: pointer;">
                     <img src="${imageSrc}" alt="${data.title}">
                     <span class="model-badge">YENİ</span>
                 </div>
@@ -77,7 +77,47 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             galleryGrid.prepend(modelCard);
         }
+
+        // --- DINAMIK YÜKLENEN RESIMLERE TIKLAMA (LIGHTBOX) DESTEGI EKLENIYOR ---
+        setupDynamicLightbox();
+
     } catch (err) {
         console.error("Katalog çekilirken hata oluştu:", err);
     }
 });
+
+function setupDynamicLightbox() {
+    // Sayfadaki tüm model görsellerini al
+    const images = document.querySelectorAll('.model-media img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+    const prevBtn = document.querySelector('.modal-prev');
+    const nextBtn = document.querySelector('.modal-next');
+
+    if (!modal || !modalImg) return;
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+        currentIndex = index;
+        const targetImg = images[currentIndex];
+        if (targetImg) {
+            modalImg.src = targetImg.src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    images.forEach((img, index) => {
+        // Zaten dinleyicisi varsa tekrar eklemeyelim
+        const parent = img.closest('.model-media');
+        if (parent && !parent.dataset.lightboxActive) {
+            parent.dataset.lightboxActive = "true";
+            parent.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openModal(index);
+            });
+        }
+    });
+}
