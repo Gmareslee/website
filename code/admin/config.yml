@@ -6,14 +6,14 @@ media_folder: "code/images/models"
 public_folder: "/images/models"
 
 collections:
-  - name: "models"
-    label: "Models"
-    folder: "code/content/models" # senin markdown içeriklerin nerede duruyorsa
+  - name: "katalog"
+    label: "Katalog"
+    folder: "code/content/katalog" # senin markdownların nerede duruyorsa
     create: true
     fields:
       - {label: "Başlık", name: "title", widget: "string"}
       - {label: "Açıklama", name: "description", widget: "text", required: false}
-      - {label: "Görsel", name: "image", widget: "image", media_folder: "code/images/models", public_folder: "/images/models"}
+      - {label: "Görsel", name: "image", widget: "image", media_folder: "code/images", public_folder: "/images"}
       
 
     # İŞTE KRİTİK KISIM BURASI:
