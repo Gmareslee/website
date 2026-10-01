@@ -1,4 +1,4 @@
-// --- DECAP CMS DİNAMİK KATALOG VE LIGHTBOX ENTEGRASYON SCRİPTİ ---
+// --- DECAP CMS DİNAMİK KATALOG VE LIGHTBOX GRID FIXED SCRİPTİ ---
 document.addEventListener("DOMContentLoaded", async () => {
     const galleryGrid = document.querySelector(".gallery-grid");
     if (!galleryGrid) return;
@@ -46,8 +46,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (!data.title) continue;
 
-            const modelCard = document.createElement("div");
-            modelCard.className = "model-item";
+            // Orijinal kart kapsayıcısı
+            const modelCard = document.createElement("article");
+            modelCard.className = "model-item result-card"; 
 
             const waText = encodeURIComponent(`Merhaba, sitenizdeki ${data.title} hakkında bilgi almak istiyorum.`);
             const waUrl = `https://wa.me/905315534189?text=${waText}`;
@@ -60,9 +61,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 imageSrc = `../${imageSrc}`;
             }
 
+            // Orijinal HTML yapısıyla birebir uyumlu iç yapı
             modelCard.innerHTML = `
                 <div class="model-media" style="cursor: pointer;">
-                    <img src="${imageSrc}" alt="${data.title}">
+                    <img src="${imageSrc}" alt="${data.title}" loading="lazy">
                     <span class="model-badge">YENİ</span>
                 </div>
                 <div class="model-info">
@@ -78,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             galleryGrid.prepend(modelCard);
         }
 
-        // Tum kartlar eklendikten sonra Lightbox olaylarini bagla
+        // Lightbox sistemini yeniden bağla
         initCustomLightbox();
 
     } catch (err) {
@@ -87,11 +89,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function initCustomLightbox() {
-    // Sayfadaki hem eski hem yeni eklenen tum resimleri al
     const allImages = Array.from(document.querySelectorAll('.gallery-grid img'));
     let lightbox = document.querySelector('.image-lightbox');
 
-    // Eger HTML'de henuz lightbox yoksa script.js gibi biz olusturalim
     if (!lightbox) {
         lightbox = document.createElement('div');
         lightbox.className = 'image-lightbox';
@@ -113,7 +113,6 @@ function initCustomLightbox() {
 
     const closeLightbox = () => lightbox.classList.remove('open');
 
-    // Her bir resme ve kapsayıcısına tıklama olayı bağlayalım
     allImages.forEach((img, idx) => {
         const cardMedia = img.closest('.model-media') || img;
         cardMedia.onclick = (e) => {
@@ -123,7 +122,6 @@ function initCustomLightbox() {
         };
     });
 
-    // Buton kontrollerini bagla
     const closeBtn = lightbox.querySelector('.lightbox-close');
     const prevBtn = lightbox.querySelector('.lightbox-prev');
     const nextBtn = lightbox.querySelector('.lightbox-next');
