@@ -1,14 +1,16 @@
 backend:
   name: github
-  repo: Gmareslee/website
-
+  repo: Gmareslee/website 
+  branch: main 
+  base_url: https://krvltekstil.netlify.app 
+  
 media_folder: "code/images"
 public_folder: "/images"
 
 collections:
   - name: "katalog"
     label: "Katalog"
-    folder: "code/content/katalog" # senin markdownların nerede duruyorsa
+    folder: "code/images" # senin markdownların nerede duruyorsa
     create: true
     fields:
       - {label: "Başlık", name: "title", widget: "string"}
