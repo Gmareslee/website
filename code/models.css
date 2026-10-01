@@ -9,22 +9,34 @@ body {
     background-color: #0f0f0f;
     color: #ffffff;
 }
-
+/* Modeller Sayfası Üst Çubuk Düzeltmesi */
 .top-bar {
-    background: #101a4d;
-    color: #fff;
-    border-bottom: 1px solid #3d3d3d;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .top-bar-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 42px;
-    padding: 0.5rem 1rem;
-    gap: 1rem;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    gap: 10px !important;
+    padding: 8px 15px !important;
+}
+
+.top-socials {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+.top-socials a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    white-space: nowrap !important;
 }
 
 .top-contact {
@@ -35,30 +47,7 @@ body {
     font-size: 0.9rem;
 }
 
-.top-contact span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    white-space: nowrap;
-}
 
-.top-socials {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.top-socials a {
-    width: 26px;
-    height: 26px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #fff;
-    color: #101a4d;
-    text-decoration: none;
-}
 
 /* Navbar Styles - Modern Cosmic */
 .navbar {
