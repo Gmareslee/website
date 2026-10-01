@@ -18,7 +18,21 @@ button {
 input {
     cursor: text;
 }
+/* Sosyal Medya İkon Hizalama Düzeltmesi */
+.top-bar, .social-links, header .social {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+}
 
+.social-links a, header .social a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
 .top-bar {
     background: #101a4d;
     color: #fff;
