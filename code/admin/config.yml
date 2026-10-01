@@ -1,3 +1,10 @@
+backend:
+  name: github
+  repo: kullaniciadi/repoadi
+
+media_folder: "images"    # Bilgisayardan yüklenen fotoğrafların gideceği ana klasör
+public_folder: "/images"   # Sitede çağrılırken başına eklenecek yol
+
 collections:
   - name: "models" # Artık senin koleksiyonun adı neyse
     label: "Modeller"
