@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 imageSrc = `../${imageSrc}`;
             }
 
-            // Orijinal HTML yapısıyla birebir uyumlu iç yapı
             modelCard.innerHTML = `
                 <div class="model-media" style="cursor: pointer;">
                     <img src="${imageSrc}" alt="${data.title}" loading="lazy">
@@ -80,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             galleryGrid.prepend(modelCard);
         }
 
-        // Lightbox sistemini yeniden bağla
+        // Lightbox sistemini yeniden bağla ve boyutlandırmayı düzelt
         initCustomLightbox();
 
     } catch (err) {
@@ -99,7 +98,22 @@ function initCustomLightbox() {
         document.body.appendChild(lightbox);
     }
 
+    // Lightbox stilini doğrudan zorla uygulayarak resmi ekranda devasa boyuta getiriyoruz
+    lightbox.style.display = 'none';
+    lightbox.style.alignItems = 'center';
+    lightbox.style.justifyContent = 'center';
+
     const lightboxImage = lightbox.querySelector('img');
+    if (lightboxImage) {
+        lightboxImage.style.maxWidth = '85vw';
+        lightboxImage.style.maxHeight = '85vh';
+        lightboxImage.style.width = 'auto';
+        lightboxImage.style.height = 'auto';
+        lightboxImage.style.objectFit = 'contain';
+        lightboxImage.style.borderRadius = '8px';
+        lightboxImage.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+    }
+
     let currentIndex = 0;
 
     const showImage = (index) => {
@@ -111,7 +125,10 @@ function initCustomLightbox() {
         }
     };
 
-    const closeLightbox = () => lightbox.classList.remove('open');
+    const closeLightbox = () => {
+        lightbox.classList.remove('open');
+        lightbox.style.display = 'none';
+    };
 
     allImages.forEach((img, idx) => {
         const cardMedia = img.closest('.model-media') || img;
@@ -119,6 +136,7 @@ function initCustomLightbox() {
             e.stopPropagation();
             showImage(idx);
             lightbox.classList.add('open');
+            lightbox.style.display = 'flex';
         };
     });
 
