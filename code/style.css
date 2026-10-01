@@ -19,20 +19,29 @@ input {
     cursor: text;
 }
 /* Sosyal Medya İkon Hizalama Düzeltmesi */
-.top-bar, .social-links, header .social {
+/* Üst Bilgi ve Sosyal Medya İkon Düzeltmesi */
+.top-bar, .top-bar-content, header .top-header {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    justify-content: space-between !important;
     flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+.social-links, header .social {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    position: static !important;
 }
 
 .social-links a, header .social a {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    text-decoration: none !important;
+    gap: 5px !important;
     white-space: nowrap !important;
 }
+
 .top-bar {
     background: #101a4d;
     color: #fff;
