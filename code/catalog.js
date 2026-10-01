@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             modelCard.innerHTML = `
                 <div class="model-media" style="cursor: pointer;">
-                    <img src="${imageSrc}" alt="${data.title}" loading="lazy">
+                  <img src="images/${imageSrc}" ...>  alt="${data.title}" loading="lazy">
                     <span class="model-badge">YENİ</span>
                 </div>
                 <div class="model-info">
