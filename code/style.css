@@ -20,27 +20,7 @@ input {
 }
 /* Sosyal Medya İkon Hizalama Düzeltmesi */
 /* Üst Bilgi ve Sosyal Medya İkon Düzeltmesi */
-.top-bar, .top-bar-content, header .top-header {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    flex-wrap: wrap !important;
-    gap: 10px !important;
-}
 
-.social-links, header .social {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    position: static !important;
-}
-
-.social-links a, header .social a {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 5px !important;
-    white-space: nowrap !important;
-}
 
 .top-bar {
     background: #101a4d;
@@ -1787,4 +1767,36 @@ body.dark-mode .model-desc {
         font-size: 0.82rem;
     }
 }
+/* Üst Bilgi Alanı ve Sosyal Medya İkon Sıkışma Kesin Çözümü */
+.top-bar, .top-bar-content, header .top-header, .header-top {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 8px 15px !important;
+}
 
+/* Sosyal medya yazısı ve ikonları taşıyan alan */
+.top-bar .social-section, header .social-area {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+/* İkonların üst üste binmesini engelleyen yapı */
+.social-links, header .social {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    position: static !important;
+    float: none !important;
+}
+
+.social-links a, header .social a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    white-space: nowrap !important;
+}
