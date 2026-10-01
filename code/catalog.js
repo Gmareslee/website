@@ -1,4 +1,4 @@
-// --- DECAP CMS ÜRÜNLERİNİ DİNAMİK YÜKLEME VE LIGHTBOX SCRIPTİ ---
+// --- DECAP CMS ÜRÜNLERİNİ DİNAMİK YÜKLEME VE LIGHTBOX BANTLAMA SCRİPTİ ---
 document.addEventListener("DOMContentLoaded", async () => {
     const galleryGrid = document.querySelector(".gallery-grid");
     if (!galleryGrid) return;
@@ -75,49 +75,31 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
             `;
 
+            // Tıklama olayını doğrudan karta ve görsele bağlıyoruz
+            const mediaDiv = modelCard.querySelector('.model-media');
+            mediaDiv.addEventListener('click', () => {
+                openImageModal(imageSrc);
+            });
+
             galleryGrid.prepend(modelCard);
         }
-
-        // --- DINAMIK YÜKLENEN RESIMLERE TIKLAMA (LIGHTBOX) DESTEGI EKLENIYOR ---
-        setupDynamicLightbox();
 
     } catch (err) {
         console.error("Katalog çekilirken hata oluştu:", err);
     }
 });
 
-function setupDynamicLightbox() {
-    // Sayfadaki tüm model görsellerini al
-    const images = document.querySelectorAll('.model-media img');
+// Resim modali açma yardımcı fonksiyonu
+function openImageModal(src) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.modal-close');
-    const prevBtn = document.querySelector('.modal-prev');
-    const nextBtn = document.querySelector('.modal-next');
 
-    if (!modal || !modalImg) return;
-
-    let currentIndex = 0;
-
-    function openModal(index) {
-        currentIndex = index;
-        const targetImg = images[currentIndex];
-        if (targetImg) {
-            modalImg.src = targetImg.src;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+    if (modal && modalImg) {
+        modalImg.src = src;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    } else {
+        // Eğer modal ID'si farklıysa varsayılan tıklama
+        window.open(src, '_blank');
     }
-
-    images.forEach((img, index) => {
-        // Zaten dinleyicisi varsa tekrar eklemeyelim
-        const parent = img.closest('.model-media');
-        if (parent && !parent.dataset.lightboxActive) {
-            parent.dataset.lightboxActive = "true";
-            parent.addEventListener('click', (e) => {
-                e.stopPropagation();
-                openModal(index);
-            });
-        }
-    });
 }
