@@ -15,3 +15,6 @@ collections:
       - {label: "Başlık", name: "title", widget: "string"}
       - {label: "Açıklama", name: "description", widget: "text", required: false}
       - {label: "Görsel", name: "image", widget: "image"}
+      
+media_folder: "images" # Veya senin görselleri kaydettiğin klasör adı (örn: "assets/images" veya "uploads")
+public_folder: "/images" # media_folder'ın başındaki slash (/) ile birlikte tam yolu
