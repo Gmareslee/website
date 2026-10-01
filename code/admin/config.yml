@@ -2,8 +2,8 @@ backend:
   name: github
   repo: Gmareslee/website
 
-media_folder: "images/models"
-public_folder: "/images/models"
+media_folder: "code/images"
+public_folder: "/images"
 
 collections:
   - name: "models" # Artık senin koleksiyonun adı neyse
