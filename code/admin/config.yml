@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: kullaniciadi/repoadi
+  repo: Gmareslee/website
 
 media_folder: "images"    # Bilgisayardan yüklenen fotoğrafların gideceği ana klasör
 public_folder: "/images"   # Sitede çağrılırken başına eklenecek yol
