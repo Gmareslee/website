@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARVEL TEKSTİL - Modeller [DEMO]</title>
+    <link rel="icon" type="image/x-icon" href="icon/basecaracal.ico">
+    <link rel="shortcut icon" href="icon/basecaracal.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <aside class="demo-top-strip" role="note" aria-label="Demo Bilgilendirmesi">
+        <span><i class="fa-solid fa-flask"></i> Bu site <strong>DEMO / TANITIM</strong> amaçlı hazırlanmıştır.</span>
+        <a href="admin.html"><i class="fa-solid fa-code"></i> Code By Mareslee</a>
+    </aside>
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="top-contact">
+                <span><i class="fa-solid fa-phone"></i> 0 (531) 553 41 89</span>
+                <span><i class="fa-solid fa-envelope"></i> info@caracaltekstil.com</span>
+            </div>
+            <div class="top-socials">
+                <strong>Sosyal medya hesapları</strong>
+                <a href="https://www.instagram.com/caracalwear/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+                <a href="https://wa.me/905315534189" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">KARVEL TEKSTİL <span class="site-demo-badge">DEMO</span></div>
+            
+            <form class="search-container" id="searchForm" autocomplete="off">
+                <input type="search" placeholder="Aramak istedıginiz kelımeyi yazınız..." class="search-input" aria-label="Search" />
+                <button type="submit" class="search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link"><span class="icon"><i class="fa-solid fa-house"></i></span><span>Anasayfa</span></a></li>
+                <li><a href="about.html" class="nav-link"><span class="icon"><i class="fa-solid fa-circle-info"></i></span><span>Hakkımızda</span></a></li>
+                <li><a href="contact.html" class="nav-link"><span class="icon"><i class="fa-solid fa-phone"></i></span><span>İletişim</span></a></li>
+                <li><a href="models.html" class="nav-link"><span class="icon"><i class="fa-solid fa-shirt"></i></span><span>Modeller</span></a></li>
+                <li><a href="brands.html" class="nav-link"><span class="icon"><i class="fa-solid fa-trademark"></i></span><span>Markalar</span></a></li>
+            </ul>
+
+            <button class="action-btn" onclick="window.open('https://wa.me/905315534189', '_blank')">
+                <i class="fa-brands fa-whatsapp"></i>Whatsapp
+                
+            </button>
+        </div>
+    </nav>
+
+    <main class="page-shell">
+        <section class="models-section" aria-label="Tekstil modelleri">
+            <aside class="models-sidebar">
+                <p class="slider-kicker">KARVEL TEKSTİL <span class="site-demo-badge">DEMO</span></p>
+                <h1>Modeller</h1>
+                <p>Model seçenekleri (Örnek Demo Modeller)</p>
+                <nav class="models-category-list" aria-label="Model kategorileri">
+                    <a class="active" href="#all-models" data-model-filter="all">Tüm modeller</a>
+                    <div class="model-category-group">
+                        <a href="#all-models" data-model-filter="men">Erkek</a>
+                        <div class="model-subcategories visible" data-subcategory-for="men">
+                            <a href="#all-models" data-model-type="shirt" data-model-gender="men">Gömlek</a>
+                            <a href="#all-models" data-model-type="trousers" data-model-gender="men">Pantolon</a>
+                            <a href="#all-models" data-model-type="tshirt" data-model-gender="men">Tişört</a>
+                        </div>
+                    </div>
+                    <div class="model-category-group">
+                        <a href="#all-models" data-model-filter="women">Kadın</a>
+                        <div class="model-subcategories visible" data-subcategory-for="women">
+                            <a href="#all-models" data-model-type="shirt" data-model-gender="women">Gömlek</a>
+                            <a href="#all-models" data-model-type="trousers" data-model-gender="women">Pantolon</a>
+                            <a href="#all-models" data-model-type="tshirt" data-model-gender="women">Tişört</a>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+            <div class="models-content" id="all-models">
+                <div class="gallery-heading">
+                    <p class="slider-kicker">KARVEL TEKSTİL</p>
+                    <h2>Model seçenekleri</h2>
+                    <p>Gömlek ve tekstil modellerinden örnekler.</p>
+                </div>
+                <div class="gallery-grid">
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/497075711_17984187455818663_3071262798235115745_n.jpg" alt="Model 1 - Slim Fit Pamuk Gömlek">
+                        <span class="model-badge">Model 1</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Slim Fit Klasik Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Pamuklu Kumaş</p>
+                        <p class="model-desc">Nefes alabilen, terletmeyen dokuma. Toptan ve özel üretim seçenekleriyle.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%201%20(Slim%20Fit%20Klasik%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/502970854_17986013054818663_2419343654154022833_n.jpg" alt="Model 2 - Oxford Pamuk Gömlek">
+                        <span class="model-badge">Model 2</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Oxford Günlük Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Oxford Pamuk</p>
+                        <p class="model-desc">Dayanıklı kumaş yapısı ve rahat kesimiyle kurumsal ve günlük kullanıma uygun.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%202%20(Oxford%20G%C3%BCnl%C3%BCk%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/581913428_1977891286335616_6313303497847027338_n.jpg" alt="Model 3 - Keten Karışımlı Gömlek">
+                        <span class="model-badge">Model 3</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Keten Karışımlı Yazlık Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %70 Pamuk, %30 Keten</p>
+                        <p class="model-desc">Hafif ve ferah doku, modern yaka tasarımı ve üst düzey dikiş kalitesi.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%203%20(Keten%20Kar%C4%B1%C5%9F%C4%B1ml%C4%B1%20Yazl%C4%B1k%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/623267817_18078066074256625_1950139970133858324_n.webp" alt="Model 4 - İtalyan Yaka Desenli Gömlek">
+                        <span class="model-badge">Model 4</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">İtalyan Yaka Desenli Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %97 Pamuk, %3 Likra</p>
+                        <p class="model-desc">Esnek ve şık form, kırışmaya karşı dayanıklı özel apre dokuma.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%204%20(%C4%B0talyan%20Yaka%20Desenli%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/624826489_18084696380134276_8686231805930947796_n.jpg" alt="Model 5 - Armürlü Dokuma Gömlek">
+                        <span class="model-badge">Model 5</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Armürlü Dokuma Klasik Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Premium Pamuk</p>
+                        <p class="model-desc">Zarif dokulu yüzey, takım elbiseler ve iş kombinleri için ideal seçim.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%205%20(Arm%C3%BCrl%C3%BC%20Dokuma%20Klasik%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/639723112_18560015191065351_6550717453653720301_n.jpg" alt="Model 6 - Poplin Pamuk Gömlek">
+                        <span class="model-badge">Model 6</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Yumuşak Doku Poplin Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Pamuk Poplin</p>
+                        <p class="model-desc">İnce ve pürüzsüz yüzey, gün boyu konfor ve hafiflik sunar.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%206%20(Yumu%C5%9Fak%20Doku%20Poplin%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/651493567_18098868785487420_8945485264467367181_n.jpg" alt="Model 7 - Regular Fit Ekose Gömlek">
+                        <span class="model-badge">Model 7</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Regular Fit Ekose Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Pamuklu İplik Boya</p>
+                        <p class="model-desc">Canlı renk dayanıklılığı, solma yapmayan iplik boyalı şık desen.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%207%20(Regular%20Fit%20Ekose%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/654675274_18115032010648458_8663329429402970349_n (1).jpg" alt="Model 8 - Çizgili Business Gömlek">
+                        <span class="model-badge">Model 8</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Çizgili Business Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %80 Pamuk, %20 Polyester</p>
+                        <p class="model-desc">Kolay ütülenen (easy-care) yapı, kurumsal firmalar ve personel için ideal.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%208%20(%C3%87izgili%20Business%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/654753207_18200690386339973_1363602932368158496_n.jpg" alt="Model 9 - Düğmeli Yaka Spor Gömlek">
+                        <span class="model-badge">Model 9</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Düğmeli Yaka Spor Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Pamuklu Twill</p>
+                        <p class="model-desc">Tok kumaş hissi, spor-şık kombinler için ideal casual kalıp.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%209%20(D%C3%BC%C4%9Fmeli%20Yaka%20Spor%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/655436059_18212398648320134_7359234922080857520_n.jpg" alt="Model 10 - Hakim Yaka Keten Gömlek">
+                        <span class="model-badge">Model 10</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Hakim Yaka Keten Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %55 Keten, %45 Pamuk</p>
+                        <p class="model-desc">Modern minimalist tasarım, sıcak havalarda maksimum hava geçirgenliği.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%2010%20(Hakim%20Yaka%20Keten%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/655960973_18079718381081585_7005246704201931559_n.webp" alt="Model 11 - Jean / Denim Efektli Gömlek">
+                        <span class="model-badge">Model 11</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Denim Dokuma Casual Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Pamuk Chambray</p>
+                        <p class="model-desc">Yumuşak yıkamalı kumaş, güçlü dikiş hatları ve zamansız tarz.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%2011%20(Denim%20Dokuma%20Casual%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                <div class="model-item">
+                    <div class="model-media">
+                        <img src="images/models/657723267_18578915470014334_7121815950642875004_n.jpg" alt="Model 12 - Jakarlı Özel Seri Gömlek">
+                        <span class="model-badge">Model 12</span>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-title">Jakarlı Özel Seri Gömlek</h3>
+                        <p class="model-fabric"><i class="fa-solid fa-layer-group"></i> %100 Mısır Pamuğu</p>
+                        <p class="model-desc">Özel jakar desen dokuması, ipeksi tuşe ve yüksek prestijli duruş.</p>
+                        <a href="https://wa.me/905315534189?text=Merhaba,%20sitenizdeki%20Model%2012%20(Jakarl%C4%B1%20%C3%96zel%20Seri%20G%C3%B6mlek)%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20ve%20bilgi%20almak%20istiyorum." class="model-order-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Et
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>KARVEL TEKSTİL <span class="site-demo-badge">DEMO</span></strong>
+                <p>Toptan imalat, fason üretim ve giyim üretimi yapıyoruz.</p>
+                <small class="footer-demo-note"><i class="fa-solid fa-circle-info"></i> Bu platform bir konsept / demo sürümüdür.</small>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Anasayfa</a>
+                <a href="about.html">Hakkımızda</a>
+                <a href="models.html">Modeller</a>
+                <a href="contact.html">İletişim</a>
+                <a href="admin.html">Demo Paneli</a>
+            </div>
+            <div class="footer-contact"><span><i class="fa-solid fa-phone"></i> 0 (531) 553 41 89</span><span><i class="fa-solid fa-envelope"></i> info@caracaltekstil.com</span><span><i class="fa-solid fa-clock"></i> Pzt-Cum 08:00-18:30 · Cmt 08:00-17:00</span></div>
+        </div>
+        <div class="footer-bottom">© 2026 KARVEL TEKSTİL. Tüm hakları saklıdır.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
