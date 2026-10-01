@@ -1,20 +1,21 @@
 backend:
   name: github
-  repo: Gmareslee/Website
+  repo: Gmareslee/website
   branch: main
+  base_url: https://WORKER_ISMIN.workers.dev
+  auth_endpoint: /auth
 
-# Dosyaların fiziksel olarak GitHub'da kaydedileceği yer (code klasörünün içi)
 media_folder: "code/images"
-
-# Sitenin ön yüzünde tarayıcının okuyacağı public yol
 public_folder: "/images"
 
 collections:
-  - name: "katalog"
-    label: "Katalog"
+  - name: "catalog"
+    label: "Katalog / Modeller"
     folder: "code/content/katalog"
     create: true
+    slug: "{{slug}}"
     fields:
-      - {label: "Başlık", name: "title", widget: "string"}
-      - {label: "Açıklama", name: "description", widget: "text", required: false}
-      - {label: "Görsel", name: "image", widget: "image"}
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Ürün Görseli", name: "image", widget: "image" }
+      - { label: "Açıklama", name: "description", widget: "text" }
+
