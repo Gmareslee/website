@@ -1,18 +1,17 @@
 backend:
-  name: github
-  repo: Gmareslee/website
+  name: git-gateway
   branch: main
 
-media_folder: "images/models"
-public_folder: "images/models"
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "katalog"
-    label: "Ürün Kataloğu"
+    label: "Katalog"
     folder: "content/katalog"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Ürün/Kumaş Adı", name: "title", widget: "string"}
-      - {label: "Açıklama", name: "description", widget: "text"}
-      - {label: "Ürün Görseli", name: "image", widget: "image"}
+      - {label: "Başlık", name: "title", widget: "string"}
+      - {label: "Açıklama", name: "description", widget: "text", required: false}
+      - {label: "Görsel", name: "image", widget: "image"}
