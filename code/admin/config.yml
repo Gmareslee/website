@@ -1,23 +1,20 @@
 backend:
   name: github
-  repo: Gmareslee/website 
-  branch: main 
-  base_url: https://krvltekstil.netlify.app 
-  
+  repo: Gmareslee/Website
+  branch: main
+
+# Dosyaların fiziksel olarak GitHub'da kaydedileceği yer (code klasörünün içi)
 media_folder: "code/images"
+
+# Sitenin ön yüzünde tarayıcının okuyacağı public yol
 public_folder: "/images"
 
 collections:
   - name: "katalog"
     label: "Katalog"
-    folder: "code/images" # senin markdownların nerede duruyorsa
+    folder: "code/content/katalog"
     create: true
     fields:
       - {label: "Başlık", name: "title", widget: "string"}
       - {label: "Açıklama", name: "description", widget: "text", required: false}
-      - {label: "Görsel", name: "image", widget: "image", media_folder: "code/images", public_folder: "/images"}
-      
-
-    # İŞTE KRİTİK KISIM BURASI:
-    media_folder: ""       # Görselin proje içinde nereye kaydedileceği
-    public_folder: ""      # Sitede yolun nasıl gösterileceği
+      - {label: "Görsel", name: "image", widget: "image"}
