@@ -2,8 +2,8 @@ backend:
   name: github
   repo: Gmareslee/website
 
-media_folder: "images"    # Bilgisayardan yüklenen fotoğrafların gideceği ana klasör
-public_folder: "/images"   # Sitede çağrılırken başına eklenecek yol
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "models" # Artık senin koleksiyonun adı neyse
