@@ -1,28 +1,23 @@
 import { defineConfig } from 'tinacms';
 
-// Your hosting provider likely exposes this as an environment variable
-const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  'main';
+// Branch adını sabitliyoruz (Node.js process uyarısını engeller)
+const branch = 'main';
 
 export default defineConfig({
   branch,
 
-  // Get this from tina.io
+  // TinaCloud Kimlik Bilgilerin
   clientId: "329e48e0-91e0-4f9d-b475-7b70ea4af125",
-  // Get this from tina.io
   token: "d6f51c72f1e40c6c770c0c79435b6c813be2be22",
 
   build: {
     outputFolder: 'admin',
-    publicFolder: 'public',
+    publicFolder: '', // Projende public klasörü olmadığı için kök dizin olarak boş bıraktık
   },
   media: {
     tina: {
-      mediaRoot: '',
-      publicFolder: 'public',
+      mediaRoot: 'images',
+      publicFolder: '',
     },
   },
   schema: {
